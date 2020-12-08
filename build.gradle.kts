@@ -1,9 +1,9 @@
 plugins {
-    id("com.android.library") version "4.1.0"
-    kotlin("multiplatform") version "1.4.20"
-    kotlin("plugin.serialization") version "1.4.20"
-    id("tz.co.asoft.library") version "1.0.0"
-    id("io.codearte.nexus-staging") version "0.22.0"
+    id("com.android.library") version vers.agp
+    kotlin("multiplatform") version vers.kotlin
+    kotlin("plugin.serialization") version vers.kotlin
+    id("tz.co.asoft.library") version vers.asoft.builders
+    id("io.codearte.nexus-staging") version vers.nexus_staging
     signing
 }
 
@@ -12,14 +12,19 @@ kotlin {
     sourceSets {
         val commonMain by getting {
             dependencies {
-                api("org.jetbrains.kotlinx:kotlinx-serialization-core:${versions.kotlinx.serialization}")
-                api("org.jetbrains.kotlinx:kotlinx-coroutines-core:${versions.kotlinx.coroutines}")
+                api("org.jetbrains.kotlinx:kotlinx-serialization-json:${vers.kotlinx.serialization}")
+            }
+        }
+
+        val commonTest by getting {
+            dependencies {
+                api(asoft("test", vers.asoft.test))
             }
         }
     }
 }
 
 aSoftLibrary(
-    version = vers.asoft.files,
-    description = "An exposer of files"
+    version = vers.asoft.either,
+    description = "An Either<L,R> multiplatform serializable datatype"
 )

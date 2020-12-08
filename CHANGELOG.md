@@ -6,7 +6,7 @@
 - Updated to gradle version 6.7.1
 
 ## New Features
-- Added Colors and ColorSpaces
+- Initial release
 
 ## Documentation
 - Update readme

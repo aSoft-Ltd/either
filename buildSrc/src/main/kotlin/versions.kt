@@ -1,16 +1,16 @@
 object vers {
+    val kotlin = "1.4.21"
+    val agp = "4.1.0"
+    val nexus_staging = "0.22.0"
+    val mongo = "3.12.7"
+
     object asoft {
-        val theme = "0.0.3"
-        val files = "0.0.1"
+        val test = "1.0.1"
+        val builders = "1.1.1"
+        val either = "0.0.1"
     }
 
     object kotlinx {
-        val datetime = "0.1.1"
-    }
-
-    object wrappers {
-        val react = "17.0.0-pre.129-kotlin-1.4.10"
-        val styled = "5.2.0-pre.129-kotlin-1.4.10"
-        val react_router_dom = "5.2.0-pre.129-kotlin-1.4.10"
+        val serialization = "1.0.1"
     }
 }
