@@ -1,23 +1,19 @@
-# Files
+# Either
 ![badge][badge-maven] ![badge][badge-mpp] ![badge][badge-android] ![badge][badge-js] ![badge][badge-jvm]
 
-A multiplatform exposer of file
-
-## Introduction
-This library will give you basic access to `File` in common code 
+A multiplatform Either Datatype
 
 ## Samples
 ```kotlin
-suspend fun checkFileThenReadBytes(file: File){
-    if(file.extension()=="jpg") { println("File is jpg")}
-    val content = file.readBytes() //suspends here
-}
+val thing1: Either<Int, String> = Either.Left(1)
+val thing2: Either<Int, String> = Either.Right("jaribio")
+val thing3 = 3.asEither<Int, String>()
 ```
 
 ## Setup
 ```kotlin
 dependencies {
-    implementation("tz.co.asoft:files:0.0.1")
+    implementation("tz.co.asoft:either:0.0.1")
 }
 ```
 
