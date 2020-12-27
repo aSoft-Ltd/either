@@ -16,3 +16,8 @@ pluginManagement {
 }
 
 rootProject.name = "either"
+
+include(":either-core")
+
+include(":either-test-expect")
+project(":either-test-expect").projectDir = File("either-test/either-test-expect")

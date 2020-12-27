@@ -28,13 +28,13 @@ fun <R> Either<*, R>.rightOrNull(): R? = try {
     null
 }
 
-inline fun <reified L, reified R> Any?.asEither(): Either<L, R> = when (this) {
+inline fun <reified L, reified R, A> A.asEither(): Either<L, R> = when (this) {
     is L -> Either.Left(this)
     is R -> Either.Right(this)
     else -> throw RuntimeException("$this is neither ${L::class.simpleName} nor ${R::class.simpleName}")
 }
 
-inline fun <reified L, reified R> Any?.asEitherOrNull(): Either<L, R>? = try {
+inline fun <reified L, reified R, A> A.asEitherOrNull(): Either<L, R>? = try {
     asEither()
 } catch (_: Throwable) {
     null
