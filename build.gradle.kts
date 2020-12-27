@@ -1,30 +1,7 @@
 plugins {
-    id("com.android.library") version vers.agp
-    kotlin("multiplatform") version vers.kotlin
-    kotlin("plugin.serialization") version vers.kotlin
-    id("tz.co.asoft.library") version vers.asoft.builders
-    id("io.codearte.nexus-staging") version vers.nexus_staging
-    signing
+    id("com.android.library") version vers.agp apply false
+    kotlin("multiplatform") version vers.kotlin apply false
+    kotlin("plugin.serialization") version vers.kotlin apply false
+    id("tz.co.asoft.library") version vers.asoft.builders apply false
+    id("io.codearte.nexus-staging") version vers.nexus_staging apply false
 }
-
-kotlin {
-    universalLib()
-    sourceSets {
-        val commonMain by getting {
-            dependencies {
-                api("org.jetbrains.kotlinx:kotlinx-serialization-json:${vers.kotlinx.serialization}")
-            }
-        }
-
-        val commonTest by getting {
-            dependencies {
-                api(asoft("test", vers.asoft.test))
-            }
-        }
-    }
-}
-
-aSoftLibrary(
-    version = vers.asoft.either,
-    description = "An Either<L,R> multiplatform serializable datatype"
-)
