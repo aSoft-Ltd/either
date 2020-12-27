@@ -12,7 +12,7 @@ class EitherTest {
 
     @Test
     fun should_have_a_better_syntax() {
-        val thing = 1.asEither<Int, String>()
+        val thing: Either<Int, String> = 1.asEither()
 //        val thing: Either<Int, String> = Either.Left(1)
 //        val thing: Either<Int, String> = Either.Left(1)
         print(thing)
